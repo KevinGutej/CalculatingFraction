@@ -24,5 +24,18 @@ class Fraction {
         if ($b == 0) {
             return $a;
         }
+        return $this->calculateGreatestCommonDivisor($b, $a % $b);
+    }
+
+    public function getNumerator() {
+        return $this->numerator;
+    }
+
+    public function getDenominator() {
+        return $this->denominator;
+    }
+
+    public function __toString() {
+        return "{$this->numerator}/{$this->denominator}";
     }
 }
