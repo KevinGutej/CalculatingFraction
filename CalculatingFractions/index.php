@@ -38,4 +38,20 @@ class Fraction {
     public function __toString() {
         return "{$this->numerator}/{$this->denominator}";
     }
+
+    public function add(Fraction $other) {
+        $newNumerator = ($this->numerator * $other->denominator) + ($other->numerator * $this->denominator);
+        $newDenominator = $this->denominator * $other->denominator;
+
+        return new Fraction($newNumerator, $newDenominator);
+    }
+
+    
 }
+
+
+$fraction1 = new Fraction(5, 3);
+$fraction2 = new Fraction(6, 2);
+
+$sum = $fraction1->add($fraction2);
+echo "Sum of fraction: " . $sum . "\n";
